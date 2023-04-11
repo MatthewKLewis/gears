@@ -1,0 +1,13 @@
+<div class="gear-form">
+    <div>
+        <input type="number" min="6" max="60" [(ngModel)]="gearFormTeethInput">
+        <button (click)="addGear()">Add Gear</button>
+    </div>
+    <button (click)="deleteGear()">Delete Gear</button>
+    <button (click)="rotateAll()">Rotate All</button>
+    <button (click)="resetAll()">Reset All</button>
+</div>
+<div class="gear-board">
+    <div *ngIf="gearService.gears.length === 0">No gears</div>
+    <Gear *ngFor="let g of gearService.gears" [gearInput]="g"></Gear>
+</div>

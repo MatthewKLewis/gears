@@ -1,7 +1,0 @@
-<button (click)="addGear()">Add Gear</button>
-<button (click)="rotate()">Rotate All</button>
-
-<div *ngIf="gearService.gears.length === 0">No gears</div>
-<div class="gear-board">
-    <Gear *ngFor="let g of gearService.gears" [gearInput]="g"></Gear>
-</div>

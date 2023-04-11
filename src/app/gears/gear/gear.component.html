@@ -1,0 +1,35 @@
+<div
+class="wheel"
+[ngStyle]="{
+  'background-color': gearInput.color,
+  'width.em': gearInput.teeth,
+  'height.em': gearInput.teeth,
+  'border-radius.em': gearInput.teeth,
+  'animation-duration': '4s',
+  'animation-name': 'ex',
+  transform: 'rotate(' + ((gearInput.toothIndex / gearInput.teeth) * 360) + 'deg)'
+}">
+
+<span *ngFor="let t of [].constructor(gearInput.teeth); let i = index"
+  class="teeth"
+  [ngStyle]="{
+    'position': 'absolute',
+    'top': 'calc(50% - .9em)',
+    'left': 'calc(50% - .9em)',
+    'text-align': 'center',
+    'margin': 0,
+    'padding': 0,
+    'background-color': i == 0 ? 'red' : 'lightblue',
+    'color': 'white',
+    'width.em': '1.8',
+    'height.em': '1.8',
+    'border-radius.em': '0.35',
+    transform: 'rotate(' + (i / gearInput.teeth) * 360 + 'deg) translate(' + gearInput.teeth / 2 + 'em)'
+  }"
+>
+  <span *ngIf="true">{{i}}</span>
+</span>
+
+<div class="axle"></div>
+
+</div>
